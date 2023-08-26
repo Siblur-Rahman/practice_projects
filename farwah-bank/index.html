@@ -45,7 +45,7 @@
                 <div class="col-md-6">
                     <div class="login-area">
                         <h4>Deposit</h4>
-                        <input type="text" class="form-control" placeholder="$ amount you want to deposit">
+                        <input type="text" id="depositAmount" class="form-control" placeholder="$ amount you want to deposit">
                         <br>
                         <button class="btn btn-success">Deposit</button>
                     </div>
@@ -55,7 +55,7 @@
                         <h4>Withdraw</h4>
                         <input type="text" class="form-control" placeholder="$ amount you want to whithdaw">
                         <br>
-                        <button class="btn btn-success">Withdraw</button>
+                        <button id="addDeposit" class="btn btn-success">Withdraw</button>
                     </div>
                 </div>
 
@@ -63,12 +63,19 @@
         </div>
     </div>
     <script>
+        //Login button Event Handler
         const loginBtn = document.getElementById("login");
         loginBtn.addEventListener("click",  function(){
             const loginAarea = document.getElementById("login-area");
             loginAarea.style.display = "none"
             const transactionArea = document.getElementById("transaction-area");
             transactionArea.style.display = "block"
+        })
+        //Deposit button Event Handler
+        const depositBtn = document.getElementById("addDeposit");
+        depositBtn.addEventListener("click", function(){
+            const depositAmount = Document.getElementById(depositAmount).value;
+            const depositNumber = parseFloat(depositAmount)
         })
     </script>
 </body>
